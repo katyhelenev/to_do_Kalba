@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="large-6 columns">
+		<form method="post" action="/new">
+		<fieldset>
+		<legend>Nouvelle Tâche</legend>
+			<div> <p> Tâche </p>
+				<input type="text" name="content"> </input>
+			</div>
+			<div>
+				<input type="submit" value="Envoyer"> </input>
+			</div>
+		</fieldset>
+		</form>
+	</div>	
+</div>
+
+<div class="row">
+	<% @t.each do |z| %>
+		<div class="large-6 columns">
+			<%= z.content %>
+		</div>
+		<div class="large-2 columns">
+			<a href="/edit/<%= z.id %>">
+				<i class="fi-page-edit"></i>
+			</a>
+		</div>
+		<div class="large-2 columns">
+			<a href="/supprimer/<%= z.id %>">
+				<i class="fi-trash"></i>
+			</a>
+		</div>
+	<% end %>
+</div>
